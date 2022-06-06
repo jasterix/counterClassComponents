@@ -1,23 +1,24 @@
 import React, { Component } from "react";
+import Amount from "./Amount";
 
 class Counter extends Component {
-  state = {
-    count: 0
+  handleIncrement = (event) => {
+    this.props.increment();
   };
 
-  handleIncrement(event) {
-    console.log(+1);
-  }
+  handleDecrement = (event) => {
+    this.props.decrement();
+  };
 
-  handleDecrement(event) {
-    console.log(-1);
-  }
   render() {
+    let count = this.props.count;
     return (
       <div>
-        <h1>Counter:</h1>
+        <h1>Counter: {count}</h1>
         <button onClick={this.handleIncrement}>increment +1 </button>
         <button onClick={this.handleDecrement}>decrement -1</button>
+        <h2> Increase by: </h2>
+        <Amount />
       </div>
     );
   }

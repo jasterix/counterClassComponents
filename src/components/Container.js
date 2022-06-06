@@ -3,17 +3,20 @@ import Counter from "./Counter";
 
 class Container extends Component {
   state = {
-    count: 0
+    count: 0,
+    amount: 78
   };
 
   handleIncrement = (event) => {
     const currentState = this.state.count;
-    return this.setState({ count: currentState + 1 });
+    const amount = this.state.amount;
+    return this.setState({ count: currentState + amount });
   };
 
   handleDecrement = () => {
     const currentState = this.state.count;
-    return this.setState({ count: currentState - 1 });
+    const amount = this.state.amount;
+    return this.setState({ count: currentState - amount });
   };
 
   render() {
@@ -21,6 +24,7 @@ class Container extends Component {
       <div>
         <Counter
           count={this.state.count}
+          amount={this.state.amount}
           increment={this.handleIncrement}
           decrement={this.handleDecrement}
         />

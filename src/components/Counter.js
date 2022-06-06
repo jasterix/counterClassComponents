@@ -15,10 +15,14 @@ class Counter extends Component {
     return (
       <div>
         <h1>Counter: {count}</h1>
-        <button onClick={this.handleIncrement}>increment +1 </button>
-        <button onClick={this.handleDecrement}>decrement -1</button>
+        <button onClick={this.handleIncrement}>
+          increment +{this.props.amount}{" "}
+        </button>
+        <button onClick={this.handleDecrement}>
+          decrement -{this.props.amount}
+        </button>
         <h2> Increase by: </h2>
-        <Amount />
+        <Amount amount={this.props.amount} />
       </div>
     );
   }

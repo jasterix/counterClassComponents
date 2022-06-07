@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 
 class Amount extends Component {
-  // state = {
-  //   amount: this.props.amount
-  // };
+  state = {
+    amount: this.props.amount
+  };
 
   handleChange = (event) => {
     console.log(event.target.value);
@@ -16,10 +16,7 @@ class Amount extends Component {
     event.preventDefault();
 
     const value = event.target.amount.value;
-
-    this.setState({ amount: value });
-    console.log(event.target.amount.value);
-    event.preventDefault();
+    this.props.amountHandle(this.state.amount);
   };
 
   render() {

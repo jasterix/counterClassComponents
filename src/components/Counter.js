@@ -22,7 +22,10 @@ class Counter extends Component {
           decrement -{this.props.amount}
         </button>
         <h2> Increase by: </h2>
-        <Amount amount={this.props.amount} />
+        <Amount
+          amount={this.props.amount}
+          amountHandle={this.props.updateAmount}
+        />
       </div>
     );
   }

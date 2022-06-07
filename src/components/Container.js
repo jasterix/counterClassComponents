@@ -4,7 +4,7 @@ import Counter from "./Counter";
 class Container extends Component {
   state = {
     count: 0,
-    amount: 78
+    amount: 90
   };
 
   handleIncrement = (event) => {
@@ -19,6 +19,10 @@ class Container extends Component {
     return this.setState({ count: currentState - amount });
   };
 
+  handleUpdateAmount = (value) => {
+    this.setState({ amount: +value });
+  };
+
   render() {
     return (
       <div>
@@ -27,6 +31,7 @@ class Container extends Component {
           amount={this.state.amount}
           increment={this.handleIncrement}
           decrement={this.handleDecrement}
+          updateAmount={this.handleUpdateAmount.bind(this)}
         />
       </div>
     );
